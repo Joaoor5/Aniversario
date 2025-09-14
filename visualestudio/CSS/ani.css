@@ -1,0 +1,374 @@
+/* ESTILOS GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: #333;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ENCABEZADO */
+header {
+    text-align: center;
+    margin: 20px 0;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards 0.5s;
+}
+
+h1 {
+    font-size: 2.8rem;
+    color: #d64d7e;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #6c567b;
+    margin-bottom: 30px;
+}
+
+/* SECCIÓN PRINCIPAL */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 1s forwards 1s;
+    position: relative;
+    z-index: 2;
+}
+
+/* MENSAJE */
+.message {
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.message p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* GALERÍA DE RECUERDOS */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.photo-placeholder {
+    height: 180px;
+    background: linear-gradient(45deg, #e6e6e6, #f0f0f0);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-style: italic;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.photo-placeholder:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* SECCIÓN DE SORPRESAS */
+.surprise-container {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.surprise-btn {
+    background: linear-gradient(45deg, #d64d7e, #f78fb3);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(214, 77, 126, 0.4);
+}
+
+.surprise-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(214, 77, 126, 0.6);
+}
+
+.surprise-content {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 245, 248, 0.9);
+    border-radius: 15px;
+    display: none;
+}
+
+/* TARJETA MUSICAL */
+.music-card {
+    margin: 30px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.music-player {
+    background: linear-gradient(45deg, #6c567b, #937dc2);
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(108, 86, 123, 0.4);
+    margin-top: 15px;
+}
+
+.audio-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.audio-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.audio-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* MENSAJE FINAL */
+.final-message {
+    text-align: center;
+    margin: 30px 0;
+    font-style: italic;
+    color: #6c567b;
+    opacity: 0;
+    animation: fadeIn 2s forwards 2s;
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.floating {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes confettiFall {
+    0% { 
+        transform: translateY(-100px) rotate(0deg); 
+        opacity: 1;
+    }
+    100% { 
+        transform: translateY(500px) rotate(360deg); 
+        opacity: 0;
+    }
+}
+
+@keyframes dance {
+    0%, 100% { transform: rotate(0deg) translateY(0); }
+    25% { transform: rotate(5deg) translateY(-5px); }
+    50% { transform: rotate(0deg) translateY(0); }
+    75% { transform: rotate(-5deg) translateY(-5px); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .main-content {
+        padding: 20px;
+    }
+    
+    .photo-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .audio-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .dancing-bear {
+        display: none; /* Ocultar ositos en móviles para no estorbar */
+    }
+}
+
+/* DECORACIONES */
+.decoration {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.heart {
+    color: #ff6b6b;
+}
+
+.flower {
+    color: #ffce5c;
+}
+
+.star {
+    color: #937dc2;
+}
+
+/* Nota sobre la música */
+.music-note {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #6c567b;
+}
+
+/* Contador de tiempo juntos */
+.time-counter {
+    background: rgba(255, 245, 248, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.counter-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d64d7e;
+}
+
+/* Efectos de confeti */
+.confetti {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    opacity: 0;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Ositos bailarines */
+.dancing-bear {
+    position: fixed;
+    z-index: 1;
+    font-size: 4rem;
+    animation: dance 1.5s infinite ease-in-out;
+    user-select: none;
+    pointer-events: none;
+}
+
+.bear-left {
+    bottom: 50px;
+    left: 30px;
+}
+
+.bear-right {
+    bottom: 80px;
+    right: 30px;
+}
+
+.bunny {
+    position: fixed;
+    z-index: 1;
+    font-size: 3.5rem;
+    animation: dance 1.2s infinite ease-in-out;
+    user-select: none;
+    pointer-events: none;
+    top: 150px;
+    left: 40px;
+    animation-delay: 0.5s;
+}
+
+.panda {
+    position: fixed;
+    z-index: 1;
+    font-size: 3.2rem;
+    animation: dance 1.7s infinite ease-in-out;
+    user-select: none;
+    pointer-events: none;
+    top: 200px;
+    right: 50px;
+    animation-delay: 0.3s;
+}
+.photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* recorta la foto para que no se deforme */
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.photo-placeholder img:hover {
+    transform: scale(1.05);
+}
