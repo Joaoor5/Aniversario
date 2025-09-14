@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños Mamá</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Decoraciones de fondo -->
+    <div class="decoration" style="top: 10%; left: 5%;">🌸</div>
+    <div class="decoration" style="top: 15%; right: 7%;">💖</div>
+    <div class="decoration" style="bottom: 20%; left: 8%;">🌺</div>
+    <div class="decoration" style="bottom: 15%; right: 10%;">✨</div>
+    <div class="decoration heart" style="top: 30%; left: 12%;">💕</div>
+    <div class="decoration flower" style="top: 40%; right: 15%;">🌷</div>
+    <div class="decoration star" style="bottom: 30%; left: 15%;">⭐</div>
+
+    <!-- Animalitos bailarines -->
+    <div class="dancing-bear bear-left">🐻</div>
+    <div class="dancing-bear bear-right">🐨</div>
+    <div class="bunny">🐰</div>
+    <div class="panda">🐼</div>
+
+    <header>
+        <h1>¡Feliz Cumpleaños Mamá!</h1>
+        <p class="subtitle">Un regalo hecho con amor y código 💖</p>
+    </header>
+    
+    <main class="main-content">
+        <section class="message">
+            <p>Querida mamá,</p>
+            <p>En este día tan especial, quería regalarte algo que viniera directamente de mi corazón.</p>
+            <p>Aunque no tengo recursos materiales ahora mismo, tengo todo el amor del mundo para ti y las ganas de convertirme en un buen programador.</p>
+            <p>Espero que esta pequeña página te haga sonreír y sepas que eres la persona más importante en mi vida.</p>
+            <p>Te quiero mucho. ¡Feliz cumpleaños!</p>
+        </section>
+        
+        <section class="time-counter">
+            <h2>Tiempo que llevamos juntos</h2>
+            <div class="counter-number" id="time-together">Cargando...</div>
+            <p>Días maravillosos a tu lado</p>
+        </section>
+        
+      <section class="photo-gallery">
+    <div class="photo-placeholder">
+        <img src="fotos/FEGS0301.JPG" alt="Nuestra foto en la playa">
+    </div>
+    <div class="photo-placeholder">
+        <img src="fotos/MFJP3720.JPG" alt="Tu foto favorita">
+    </div>
+    <div class="photo-placeholder">
+        <img src="fotos/YLDZ7179.JPG" alt="Nuestra última selfie">
+    </div>
+</section>
+
+        
+        <section class="surprise-container">
+            <button class="surprise-btn" onclick="revealSurprise()">¡Haz clic para una sorpresa!</button>
+            <div id="surprise" class="surprise-content">
+                <h2>Eres la mejor mamá del mundo</h2>
+                <p>Porque...<br>
+                - Siempre has estado ahí para mí<br>
+                - Me has apoyado en todos mis sueños<br>
+                - Tu amor incondicional es mi mayor fortaleza<br>
+                - Eres mi ejemplo a seguir cada día</p>
+                <p>¡Gracias por ser quien eres!</p>
+            </div>
+        </section>
+        
+        <section class="music-card">
+            <h2>Una canción para ti</h2>
+            <div class="music-player">
+                <p>Dedico esta canción para la mujer más maravillosa de mi vida</p>
+                
+                <!-- Reproductor de audio -->
+                <audio id="birthdayAudio">
+                    <!-- Para agregar tu música: 
+                    1. Consigue un archivo MP3 
+                    2. Cámbiale el nombre a "cancion.mp3" 
+                    3. Ponlo en la misma carpeta que este archivo HTML -->
+                   <source src="cancion.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+                
+                <div class="audio-controls">
+                    <button class="audio-btn" onclick="playAudio()">▶️</button>
+                    <button class="audio-btn" onclick="pauseAudio()">⏸️</button>
+                    <button class="audio-btn" onclick="stopAudio()">⏹️</button>
+                </div>
+                
+                <div class="volume-control">
+                    <span>Volumen:</span>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.7" onchange="setVolume()">
+                </div>
+            </div>
+            
+            <p class="music-note">Para agregar tu música, guarda un archivo MP3 llamado "cancion.mp3" en la misma carpeta que esta página</p>
+        </section>
+    </main>
+    
+    <footer class="final-message">
+        <p>Con todo mi amor, en tu día especial.<br>Tu hijo que te admira y te quiere mucho.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
